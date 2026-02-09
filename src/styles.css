@@ -1,1 +1,15 @@
 /* You can add global styles to this file, and also import other style files */
+:root {
+  --rojo-principal: #DE1B15;
+  --color-fondo: rgba(230, 218, 195, 1);
+  --verde: rgba(52, 86, 58, 0.866);
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-weight: 500;
+}
+
+html, body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  background-color: var(--color-fondo);
+}

@@ -1,0 +1,253 @@
+<div class="container-main">
+  <header class="header">
+    <p (click)="scrollTo()">Rolling Panchería Gourmet</p>
+    <p (click)="scrollToHistoria()">Quienes somos</p>
+  </header>
+  <div class="bienvenida">
+    <span class="info-bienvenida">
+      <span class="container-logo">
+        <img class="logo" src="./rolling-logo.png" alt="">
+      </span>
+      <!-- <span class="container-isotipo">
+        <img class="isotipo" src="./isotipo-rolling.png" alt="">
+      </span> -->
+        <h1 class="titulo tit">!Bienvenidos a nuestra panchería gourmet!</h1>
+        <h3>Descubrí los mejores panchos de la ciudad</h3>
+        <div class="container-botones">
+          <button (click)="scrollToMenu()" class="btn-menu">Ver Menú</button>
+          <button class="btn-menu" (click)="scrollToServicios()">Nuestros Servicios</button>
+        </div>
+    </span>
+    <span class="container-foto">
+        <img src="./pancho.png" alt="">
+    </span>
+  </div>
+  <section class="menu" #seccionMenu>
+    <h1 class="titulo-rojo">Nuestros panchos estrella</h1>
+    
+    <div class="carrusel-wrapper">
+      
+      <button class="flecha flecha-izq" (click)="moverCarrusel(-1)">
+        <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="black" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+          <polyline points="15 18 9 12 15 6"></polyline>
+        </svg>
+      </button>
+
+      <div class="container-items" #scroller (scroll)="onScroll($event)">
+        
+        <article class="item-menu">
+          <img src="./pancho.png" alt="Pancho Argento">
+          <h3 class="titulo-pancho">Argento</h3>
+          <div class="descripcion">
+            <ul>
+              <li class="descripcion-titulo red">Pancito de papa</li>
+              <li class="descripcion-salchicha red">Salchicha ahumada</li>
+              <li class="descripcion">ChimiMayo o mayo clásica.</li>
+              <li class="descripcion">Papas fritas picadas.</li>
+              <li class="red">Con nachos y cheddar</li>
+            </ul>
+          </div>
+        </article>
+
+        <article class="item-menu">
+          <img src="./pancho.png" alt="Pancho Argento">
+          <h3 class="titulo-pancho">Mexicano</h3> <div class="descripcion">
+              <ul><li>Contenido de prueba...</li></ul>
+          </div>
+        </article>
+
+        <article class="item-menu">
+          <img src="./pancho.png" alt="Pancho Argento">
+          <h3 class="titulo-pancho">Aleman</h3>
+          <div class="descripcion">
+              <ul><li>Contenido de prueba...</li></ul>
+          </div>
+        </article>
+
+        <article class="item-menu">
+          <img src="./pancho.png" alt="Pancho Argento">
+          <h3 class="titulo-pancho">Americano</h3>
+          <div class="descripcion">
+              <ul><li>Contenido de prueba...</li></ul>
+          </div>
+        </article>
+
+        <article class="item-menu">
+          <img src="./pancho.png" alt="Pancho Argento">
+          <h3 class="titulo-pancho">Americano</h3>
+          <div class="descripcion">
+              <ul><li>Contenido de prueba...</li></ul>
+          </div>
+        </article>
+
+        <article class="item-menu">
+          <img src="./pancho.png" alt="Pancho Argento">
+          <h3 class="titulo-pancho">Americano</h3>
+          <div class="descripcion">
+              <ul><li>Contenido de prueba...</li></ul>
+          </div>
+        </article>
+
+      </div>
+
+      <button class="flecha flecha-der" (click)="moverCarrusel(1)">
+        <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="black" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+          <polyline points="9 18 15 12 9 6"></polyline>
+        </svg>
+      </button>
+
+    </div>
+    <div class="dots-container">
+      @for (item of itemsArray; track $index) {
+        <button 
+          class="dot" 
+          [class.active]="$index === activeIndex"
+          (click)="irAlSlide($index)">
+        </button>
+      }
+    </div>
+
+  </section>
+
+  <section class="quienes-somos" #quienesSomos>
+    <div class="foto">
+      <img src="./track-foto.jpg" alt="">
+    </div>
+    <div class="container-historia">
+      <div class="nosotros">
+        <h1>Acerca de Nosotros</h1>
+        <h3>Nuestra pasión</h3>
+        <p>En Rolling nos apasiona llevar la comida callejera a un nivel gourmet. Nuestros panchos son únicos y están hechos con ingredientes frescos y de primera calidad para que disfrutes la experiencia de algo tradicional llevado a la excelencia. <br>
+        Vení a conocernos!
+        </p>
+      </div>
+      <div class="historia">
+        <h3>Nuestra historia</h3>
+        <p>Somos un emprendimiento que empezó con un grupo de amigos queriendo salir de lo tradicional y revolucionar algo que nos gustaba a todos! Empezamos a modificar un truck para poder empezar a vender y con el paso del tiempo pudimos conseguir un segundo para cubrir dos eventos al mismo tiempo.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="servicios" #servicios>
+    <div class="titulo-servicios">
+      <h1 class="titulo">Nuestros Servicios</h1>
+    </div>
+
+    <div class="container-tipos-servicios">
+
+      <div class="carrusel">
+        <h3 class="primero">Eventos Corporativos</h3>
+        <article class="masonry">
+          <img class="masonry-item" src="./pancho.png" alt="">
+          <img class="masonry-item" src="./pancho.png" alt="">
+          <img class="masonry-item" src="./pancho.png" alt="">
+          <img class="masonry-item" src="./pancho.png" alt="">
+        </article>
+      </div>
+      <div class="container-btn">
+        <button class="btn-reserva corpo" (click)="irAWhatsApp('Hola, vengo desde su página web y quiero obtener información para realizar un evento corporativo')">
+          Cotizá tu evento corporativo</button>
+      </div>
+
+      <div class="carrusel">
+        <h3>Fiestas o Cumpleaños</h3>
+        <article class="masonry">
+          <img class="masonry-item" src="./pancho.png" alt="">
+          <img class="masonry-item" src="./pancho.png" alt="">
+          <img class="masonry-item" src="./pancho.png" alt="">
+          <img class="masonry-item" src="./pancho.png" alt="">
+        </article>
+      </div>
+      <div class="container-btn">
+        <button class="btn-reserva cumple" (click)="irAWhatsApp('Hola, vengo desde su página web y quiero obtener información para realizar una fiesta!')">
+          Solicita tu presupuesto para fiestas</button>
+      </div>
+
+      <div class="carrusel">
+        <h3>Eventos al aire libre</h3>
+        <article class="masonry">
+          <img class="masonry-item" src="./pancho.png" alt="">
+          <img class="masonry-item" src="./pancho.png" alt="">
+          <img class="masonry-item" src="./pancho.png" alt="">
+          <img class="masonry-item" src="./pancho.png" alt="">
+        </article>
+      </div>
+      <div class="container-btn">
+        <button class="btn-reserva" (click)="irAWhatsApp('Hola, vengo desde su página web y quiero obtener información para mi evento')">
+          Reserva tu evento</button>
+      </div>
+    </div>
+  </section>
+
+  <section class="mapa">
+  <h1>¡Encontranos en el Parque Lineal Quilmes-Don Bosco todos los fines de semana!</h1>
+  
+  <div class="container-mapa">
+    <iframe 
+      src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3280.3002502077943!2d-58.295447888345535!3d-34.697606172807745!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95a333c61b4c38b5%3A0x8b791c1909f3cfbd!2sParque%20Lineal%20Quilmes-Don%20Bosco!5e0!3m2!1ses!2sar!4v1767402488913!5m2!1ses!2sar" 
+      width="100%" 
+      height="400" 
+      style="border:0;" 
+      allowfullscreen="" 
+      loading="lazy" 
+      referrerpolicy="no-referrer-when-downgrade">
+    </iframe>
+  </div>
+
+</section>
+  <footer>
+    <div class="info">
+      <h1>Rolling House Panchería</h1>
+      <p>© 2035 by Rolling House Panchería. Powered and secured by <a href="https://www.linkedin.com/in/lucas-carmagnola" target="_blank">Lucas Carmagnola</a></p>
+    </div>
+    <div class="politica">
+      <p>Política de Privacidad</p>
+      <p>Declaración de Accesibilidad</p>
+      <p>Términos y Condiciones</p>
+      <p>Política de Reembolso</p>
+    </div>
+    <div class="contacto">
+      <p>+54 9 11 4399-6647</p>
+      <p><a target="_blank" href="https://www.google.com/maps/place/Parque+Lineal+Quilmes-Don+Bosco/@-34.697366,-58.2937807,19z/data=!4m12!1m5!3m4!2zMzTCsDQxJzUwLjQiUyA1OMKwMTcnMzYuOCJX!8m2!3d-34.697337!4d-58.29356!3m5!1s0x95a333c61b4c38b5:0x8b791c1909f3cfbd!8m2!3d-34.6976062!4d-58.2928676!16s%2Fg%2F11g4c2fkcj?hl=es&entry=ttu&g_ep=EgoyMDI1MTIwOS4wIKXMDSoASAFQAw%3D%3D">Parque Lineal Quilmes-Don Bosco</a></p>
+      <p class="linea"></p>
+      <span class="redes">
+        <a href="https://www.instagram.com/rollinghouse.pancheria/" target="_blank">
+          <svg 
+            xmlns="http://www.w3.org/2000/svg" 
+            width="40" 
+            height="40" 
+            viewBox="0 0 24 24" 
+            fill="none"
+          >
+            <circle cx="12" cy="12" r="12" fill="rgba(230, 218, 195, 1)" />
+            
+            <g transform="translate(4.5, 4.5) scale(0.625)">
+              <path 
+                fill="#DE1B15" 
+                d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"
+              />
+            </g>
+          </svg>
+        </a>
+        <a href="https://api.whatsapp.com/send/?phone=5491143996647&text&type=phone_number&app_absent=0" target="_blank">
+          <svg 
+            xmlns="http://www.w3.org/2000/svg" 
+            width="40" 
+            height="40" 
+            viewBox="0 0 24 24" 
+            fill="none"
+          >
+            <circle cx="12" cy="12" r="12" fill="rgba(230, 218, 195, 1)" />
+            
+            <g transform="translate(4.5, 4.5) scale(0.625)">
+              <path 
+                fill="#DE1B15" 
+                d="M12.017 0C5.396 0 .01 5.384.005 12.001c-.003 2.117.553 4.181 1.607 6.006L0 24l6.135-1.609c1.759.958 3.744 1.464 5.762 1.466h.005c6.623 0 12.011-5.386 12.016-12.004.002-3.207-1.247-6.222-3.516-8.49C18.135 1.252 15.124.002 12.017 0zm0 21.987h-.003c-1.789-.001-3.545-.481-5.075-1.389l-.364-.216-3.771.989 1.007-3.678-.237-.376c-.998-1.586-1.525-3.428-1.522-5.316.005-5.518 4.494-10.005 10.016-10.005 2.673 0 5.186 1.041 7.076 2.932 1.891 1.891 2.932 4.406 2.929 7.08-.006 5.521-4.497 10.008-10.021 10.008zm5.494-7.492c-.3-.15-1.777-.877-2.052-.977-.276-.1-.476-.15-.676.15-.2.3-.776.977-.951 1.177-.175.2-.35.225-.65.075-.3-.15-1.265-.466-2.41-1.487-.894-.798-1.498-1.784-1.673-2.084-.175-.3-.019-.463.131-.613.135-.135.3-.35.45-.525.15-.175.2-.3.3-.5.1-.2.05-.375-.025-.525-.075-.15-.676-1.627-.926-2.229-.244-.588-.492-.508-.676-.517-.175-.008-.375-.01-.575-.01-.2 0-.525.075-.8.375-.275.3-1.051 1.027-1.051 2.504 0 1.477 1.076 2.904 1.226 3.104.15.2 2.116 3.231 5.126 4.531.715.309 1.273.494 1.709.631.718.228 1.373.196 1.888.119.577-.086 1.777-.727 2.027-1.427.25-.7.25-1.302.175-1.427-.075-.125-.275-.2-.575-.35z"
+              />
+            </g>
+          </svg>
+        </a>
+      </span>
+    </div>
+  </footer>
+</div>

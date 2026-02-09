@@ -1,0 +1,695 @@
+/* =========================================
+   RESET GLOBAL Y VARIABLES
+   ========================================= */
+* {
+  box-sizing: border-box; /* Vital para que las medidas sean exactas */
+}
+
+:root {
+  padding: 0;
+  margin: 0;
+  height: 100dvh;
+  
+  /* Colores */
+  --rojo-principal: #DE1B15;
+  --color-fondo: #c7a26a;
+  
+  /* Configuración Carrusel */
+  --card-width: 380px;
+  --gap: 1rem; 
+}
+
+body, html {
+  margin: 0;
+  padding: 0;
+}
+
+/* =========================================
+   HEADER Y BIENVENIDA
+   ========================================= */
+header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: var(--color-fondo);
+  padding: 0 3%;
+  color: var(--rojo-principal);
+  height: 70px;
+}
+
+header p {
+  cursor: pointer;
+}
+@media (max-width: 980px){
+  .container-foto{
+    display: none;
+  }
+  .bienvenida{
+    flex-direction: column;
+    width: 100%;
+    padding: 10px;
+  }
+  .bienvenida span{
+    width: 100%;
+    margin: 0;
+    padding: 0;
+  }
+  .info-bienvenida{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .info-bienvenida h3{
+    text-align: center;
+    margin: 0;
+  }
+  .tit{
+    margin: 0 !important;
+    text-align: center;
+  }
+  .container-logo{
+    background-color: var(--color-fondo);
+    height: 190px !important;
+    width: 190px !important;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    margin-top: 20px !important;
+    margin-bottom: 20px !important;
+  }
+  .logo{
+    border-radius: 50%;
+    object-fit: cover;
+    height: 180px;
+    width: 180px;
+  }
+
+  .quienes-somos{
+    flex-direction: column;
+    width: 100%;
+    background-color: transparent !important;
+    height: auto !important;
+  }
+  .foto{
+    width: 100% !important;
+    height: 600px !important;
+  }
+  .foto img{
+    object-fit: cover;
+    object-position: center 20%;
+    width: 100%;
+  }
+
+  .container-historia{
+    background-color: #c7a26a3d;
+    width: 100% !important;
+    box-sizing: border-box !important;
+  }
+  
+  .container-historia p{
+    justify-content: center;
+    align-items: center;
+  }
+
+  .mapa h1{
+    width: 80%;
+  }
+  .container-mapa{
+    width: 90% !important;
+  }
+  .quienes-somos{margin-bottom: 4rem !important;}
+}
+
+.bienvenida {
+  background-color: var(--rojo-principal);
+  display: flex;
+  margin: 0;
+  padding: 0;
+  color: white;
+}
+
+.logo {
+  border-radius: 50%;
+  object-fit: cover;
+  height: 90%;
+  width: 90%;
+}
+
+.isotipo {
+  padding: 10px;
+  object-fit: contain;
+  height: 90%;
+  width: 90%;
+  background-color: azure;
+}
+
+.container-isotipo {
+  background-color: aqua;
+  height: 190px;
+  width: 190px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0;
+  padding: 15px;
+}
+
+.container-logo {
+  background-color: var(--color-fondo);
+  height: 190px;
+  width: 190px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  margin: 1.5rem 0;
+}
+
+.info-bienvenida {
+  width: 40%;
+  margin-top: 30px;
+  margin-left: 3.8rem;
+}
+
+.titulo {
+  font-weight: 100;
+  margin-bottom: 5rem;
+  font-size: 3rem;
+}
+
+.info-bienvenida h3 {
+  font-weight: 100;
+  margin: 4rem 0 2rem 0;
+}
+.container-botones{
+  display: flex;
+  gap: 1rem;
+}
+
+.btn-menu {
+  height: 50px;
+  width: 160px;
+  border-radius: 10px;
+  border: none;
+  background-color: var(--color-fondo);
+  color: red;
+  margin: 3rem 0 5rem 0;
+  font-size: 1rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: transform 0.2s ease, background-color 0.2s ease;
+}
+
+.btn-menu:hover{
+  background-color: #e3c18f;
+  font-weight: 600;
+}
+.btn-menu:active{
+  transform: scale(0.95);
+  transition: transform 0.05s ease;
+}
+
+.container-foto {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0;
+  margin: 0;
+  width: 60%;
+}
+
+.container-foto img {
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
+}
+
+
+.servicios {
+  padding: 0.5rem 3rem 10rem 3rem;
+}
+
+.container-tipos-servicios {
+  display: flex;
+  flex-direction: column;
+  gap: 3rem; 
+}
+
+.titulo-servicios h1 {
+  color: var(--rojo-principal);
+  margin: 2rem 0;
+}
+
+.carrusel h3 {
+  color: var(--rojo-principal);
+  font-size: 1.8rem;
+  font-weight: 500;
+  margin-bottom: 1.5rem;
+  padding-left: 0.75rem;
+  border-left: 4px solid var(--rojo-principal);
+}
+
+.masonry {
+  column-count: 2;
+  column-gap: 0.5rem; 
+}
+
+.masonry-item {
+  width: 100%;
+  display: block;
+  margin-bottom: 0.5rem; 
+  aspect-ratio: 5 / 4;
+  object-fit: cover;
+  border-radius: 8px;
+  break-inside: avoid;
+  
+  /* Animaciones */
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fade-in linear forwards;
+  animation-timeline: view();
+  animation-range: entry 20% cover 35%;
+  transition: transform 0.3s ease;
+}
+
+.masonry-item:nth-child(3n) { aspect-ratio: 4 / 4; }
+.masonry-item:nth-child(5n) { aspect-ratio: 4 / 5; }
+.masonry-item:nth-child(4n) { aspect-ratio: 6 / 4; }
+
+.masonry-item:hover {
+  transform: scale(1.02);
+}
+
+@keyframes fade-in {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.container-btn {
+  display: flex;
+  justify-content: center;
+}
+
+.btn-reserva {
+  background-color: var(--rojo-principal);
+  color: var(--color-fondo);
+  height: 5rem;
+  width: 50%;
+  border-radius: 10px;
+  border: none;
+  margin-top: 50px;
+  font-size: 1.7rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: transform 0.2s ease, background-color 0.2s ease;
+}
+
+.btn-reserva:hover{
+  filter: brightness(0.70);
+}
+.btn-reserva:active{
+  transform: scale(0.95);
+  transition: transform 0.05s ease;
+}
+
+.corpo{
+  background-color: rgba(52, 86, 58, 0.866);
+  margin: 0;
+}
+.cumple{
+  background-color: rgba(219, 120, 0, 0.818);
+  margin: 0;
+}
+@media (max-width: 768px) {
+  .masonry { column-count: 1; }
+  .carrusel h3 { font-size: 1.5rem; }
+  .quienes-somos{margin-bottom: 5rem !important;}
+  .servicios {padding-top: 0; margin-top: 0;}
+  .titulo-servicios h1{ margin-top: 0;}
+}
+
+
+.menu {
+  margin: 2rem auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  width: 100%;
+
+}
+
+
+.carrusel-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  
+  width: 95%; 
+  max-width: 450px; 
+}
+
+.container-items {
+  display: flex;
+  flex-wrap: nowrap; 
+  gap: 16px;
+  
+  /* Scroll */
+  overflow-x: auto;
+  scroll-behavior: smooth;
+  scroll-snap-type: x mandatory;
+  
+  width: 100%; 
+  padding-bottom: 20px;
+  
+  /* Ocultar scrollbar */
+  scrollbar-width: none; 
+  -ms-overflow-style: none;
+}
+
+.container-items::-webkit-scrollbar {
+  display: none;
+}
+
+
+.item-menu {
+  flex: 0 0 100%;
+  width: 100%;
+
+  flex-shrink: 0; 
+  
+  scroll-snap-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  
+  background-color: rgba(52, 86, 58, 0.866);
+  border-radius: 20px;
+  padding-bottom: 2rem;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+}
+
+.item-menu img {
+  width: 100%; 
+  height: 300px;
+  object-fit: cover;
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
+}
+
+.titulo-rojo { 
+  font-weight: 100; 
+  font-size: 2.6rem; 
+  color: var(--rojo-principal); 
+  text-align: center; 
+  margin: 4rem 0;
+}
+.red { color: var(--color-fondo); font-weight: 500; }
+.titulo-pancho { color: var(--color-fondo); font-weight: 400; font-size: 2.5rem; margin: 10px; }
+.descripcion { width: 90%; font-weight: 400; color: white;}
+
+
+.flecha {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: white;
+  border: 1px solid #ddd;
+  border-radius: 50%;
+  width: 45px;
+  height: 45px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  z-index: 50; 
+  box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+  transition: all 0.2s;
+}
+
+.flecha:active { transform: translateY(-50%) scale(0.9); }
+.flecha-izq { left: -25px; } 
+.flecha-der { right: -25px; }
+
+.dots-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 8px; 
+  margin-top: 1.5rem; 
+  width: 100%;
+}
+
+.dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  border: none;
+  background-color: #ccc; 
+  cursor: pointer;
+  transition: all 0.3s ease;
+  padding: 0;
+}
+
+.dot.active {
+  background-color: var(--rojo-principal);
+  transform: scale(1.3);
+}
+
+@media (min-width: 850px) {
+  .dots-container { display: none; }
+}
+
+@media (max-width: 849px) {
+  .flecha { display: none; }
+
+  footer div{
+    width: 50%;
+    padding-left: 2rem !important;
+  }
+  .contacto{
+    gap: 2rem;
+  }
+  .linea{
+    max-width: 100% !important;
+  }
+
+}
+
+
+@media (min-width: 850px) {
+  
+  .carrusel-wrapper {
+    width: 785px; 
+    max-width: none; 
+  }
+
+  .item-menu {
+    flex: 0 0 380px !important;
+    width: 380px !important;
+    min-width: 380px !important;
+    max-width: 380px !important;
+  }
+}
+
+/* MODO 3 CARTAS (> 1250px) */
+@media (min-width: 1250px) {
+  .carrusel-wrapper {
+    width: 1190px; 
+  }
+}
+
+footer{
+  display: flex;
+  justify-content: center;
+  color: var(--rojo-principal);
+  font-weight: 400;
+  margin-top: 6rem;
+}
+
+footer div{
+  padding: 10px;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  width: 50%;
+  padding-left: 8%;
+  height: 100%;
+}
+
+footer svg{
+  margin: 0 0.3rem;
+  padding-top: 0;
+}
+
+
+.info a{
+  color: var(--rojo-principal);
+}
+
+
+.contacto a{
+  color: var(--rojo-principal);
+}
+
+.info h1{
+  margin: 2px;
+  margin-bottom: 1.5rem;
+  font-weight: 400;
+}
+
+.linea{
+  margin-top: 0.5rem;
+  border-bottom: 1px #DE1B15 solid;
+  width: 280px;
+}
+
+.contacto p{
+  margin-top: 0;
+}
+
+.politica p{
+  margin: 0.3rem;
+}
+
+@media (max-width: 768px) {
+
+  .tit{
+    margin: 0 0.5rem;
+  }
+  .container-foto{
+    display: none;
+  }
+  
+  footer {
+    flex-direction: column;
+    align-items: center;
+    padding-bottom: 2rem;
+    margin-top: 4rem;
+  }
+
+ 
+  footer div {
+    width: 100%;       
+    padding: 0 1rem;   
+    margin-bottom: 2rem; 
+    align-items: center;  
+    text-align: center;  
+    height: auto;      
+  }
+
+  .linea {
+    width: 60%; 
+    margin: 0.5rem auto; 
+  }
+
+  .redes {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    margin-top: 10px;
+  }
+
+  .info h1 {
+    font-size: 1.8rem; 
+    margin-bottom: 1rem;
+  }
+
+
+  .contacto { order: 2; }
+  .info { order: 1; }
+  .politica { order: 3; } 
+
+  .btn-reserva{
+    width: 90%;
+    font-size: 1.5rem;
+  }
+  
+}
+
+
+.quienes-somos{
+  display: flex;
+  justify-content: center;
+  height: 45rem;
+  margin: 7rem 0;
+  color: var(--rojo-principal);
+  font-weight: 400;
+  background-color: #c7a26a3d;
+}
+
+.foto{
+  height: 100%;
+  width: 50%;
+}
+
+.foto img{
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+}
+
+.container-historia{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
+  width: 50%;
+}
+
+.nosotros{
+  display: flex;
+  flex-direction: column;
+  padding: 0 5rem;
+}
+
+.nosotros h1{
+  font-size: 2.5rem;
+  font-weight: 400;
+}
+
+.container-historia p{
+  width: 70%;
+}
+
+.historia{
+  display: flex;
+  flex-direction: column;
+  padding: 0 5rem;
+  margin-bottom: 4rem;
+}
+
+@media(max-width: 1025px){
+  .container-historia p{
+    width: 90%;
+  }
+
+  .container-mapa{
+    width: 80%;
+  }
+}
+
+
+.mapa{
+  display: flex;
+  flex-direction: column;
+  color: var(--rojo-principal);
+  align-items: center;
+  justify-content: center;
+  padding: 0 0.4rem;
+  gap: 2rem;
+  background-color: #c7a26a3d;
+}
+.mapa h1{
+  text-align: center;
+}
+
+.container-mapa{
+  width: 50%;
+  margin: 0.5rem 0 5rem 0;
+}
+
+
