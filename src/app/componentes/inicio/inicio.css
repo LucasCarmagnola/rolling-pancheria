@@ -706,8 +706,8 @@ footer svg{
 
 /* ── DESIGN TOKENS ──────────────────────────────── */
 :host {
-  --bg-dark:        #0d0d0d;
-  --bg-card:        #161616;
+  --bg-dark:        #0a1a0f;
+  --bg-card:        #0d1a10;
   --bg-card-hover:  #1e1e1e;
   --accent:         #f5c518;     /* mostaza vibrante */
   --accent-warm:    #e8a800;
@@ -807,7 +807,7 @@ ul { list-style: none; }
   justify-content: space-between;
   padding: 0 clamp(1.5rem, 4vw, 3rem);
   height: 64px;
-  background: rgba(13, 13, 13, 0.92);
+  background: #0d1a10;
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
   border-bottom: 1px solid var(--border);
